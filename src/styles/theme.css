@@ -1,0 +1,255 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #efe9da;
+  --foreground: #2b2b2b;
+  --card: #f7f0df;
+  --card-foreground: #2b2b2b;
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #2b2b2b;
+  --primary-foreground: #f3eee1;
+  --secondary: #e4d8bd;
+  --secondary-foreground: #2b2b2b;
+  --muted: #e8dfcd;
+  --muted-foreground: #665f52;
+  --accent: #d9b45f;
+  --accent-foreground: #2b2b2b;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(43, 43, 43, 0.26);
+  --input: transparent;
+  --input-background: #f7f0df;
+  --switch-background: #c9bfa8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #2b2b2b;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 1rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .primeDoorButton {
+    --figure-duration: 100;
+    --transform-figure: none;
+    --walking-duration: 100;
+    --transform-arm1: none;
+    --transform-wrist1: none;
+    --transform-arm2: none;
+    --transform-wrist2: none;
+    --transform-leg1: none;
+    --transform-calf1: none;
+    --transform-leg2: none;
+    --transform-calf2: none;
+    display: flex;
+    align-items: center;
+    width: 142px;
+    min-height: 44px;
+    padding: 11px 14px;
+    border: 2px solid #2b2b2b;
+    border-radius: 999px;
+    background: rgba(247, 240, 223, 0.88);
+    color: #2b2b2b;
+    cursor: pointer;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    position: relative;
+    perspective: 100px;
+    overflow: visible;
+    box-shadow: 3px 3px 0 rgba(43, 43, 43, 0.32);
+    transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+  }
+
+  .primeDoorButton:hover { transform: translateY(-1px); }
+  .primeDoorButton.logout:hover { background: #f9dfd8; color: #9f2b22; }
+  .primeDoorButton.login:hover { background: #e8dfcd; color: #2b2b2b; }
+  .primeDoorButton:hover .door { transform: rotateY(20deg); }
+  .primeDoorButton:active .door { transform: rotateY(28deg); }
+  .primeDoorButton.clicked .door { transform: rotateY(35deg); }
+  .primeDoorButton.door-slammed .door { transform: none; transition: transform 100ms ease-in 250ms; }
+  .primeDoorButton.falling { animation: lb-shake 200ms linear; }
+  .primeDoorButton.falling .bang { animation: lb-flash 300ms linear; }
+  .primeDoorButton.falling .figure {
+    animation: lb-spin 1000ms infinite linear;
+    bottom: -1080px;
+    opacity: 0;
+    right: 1px;
+    transition: transform calc(var(--figure-duration) * 1ms) linear, bottom calc(var(--figure-duration) * 1ms) cubic-bezier(0.7, 0.1, 1, 1) 100ms, opacity calc(var(--figure-duration) * 0.25ms) linear calc(var(--figure-duration) * 0.75ms);
+  }
+  .primeDoorButton.login.entered .figure { transform: translateX(-15px); transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .primeDoorButton .button-text { position: relative; z-index: 10; margin-left: auto; margin-right: 48px; pointer-events: none; }
+  .primeDoorButton svg { display: block; position: absolute; pointer-events: none; }
+  .primeDoorButton .figure { bottom: 7px; right: 21px; width: 25px; fill: #2b2b2b; transform: var(--transform-figure); transition: transform calc(var(--figure-duration) * 1ms) cubic-bezier(0.2, 0.1, 0.8, 0.9); z-index: 4; }
+  .primeDoorButton .doorway, .primeDoorButton .door { bottom: 6px; right: 14px; width: 27px; fill: #2b2b2b; }
+  .primeDoorButton .doorway { z-index: 3; opacity: 0.45; }
+  .primeDoorButton .door { transform: rotateY(12deg); transform-origin: 100% 50%; transform-style: preserve-3d; transition: transform 200ms ease; z-index: 5; }
+  .primeDoorButton.login .door { transform-origin: 0% 50%; }
+  .primeDoorButton .door path { fill: #f7f0df; stroke: #2b2b2b; stroke-width: 4; }
+  .primeDoorButton .door circle { fill: #2b2b2b; }
+  .primeDoorButton .bang { opacity: 0; }
+  .primeDoorButton .arm1, .primeDoorButton .wrist1, .primeDoorButton .arm2, .primeDoorButton .wrist2, .primeDoorButton .leg1, .primeDoorButton .calf1, .primeDoorButton .leg2, .primeDoorButton .calf2 { transition: transform calc(var(--walking-duration) * 1ms) ease-in-out; }
+  .primeDoorButton .arm1 { transform: var(--transform-arm1); transform-origin: 52% 45%; }
+  .primeDoorButton .wrist1 { transform: var(--transform-wrist1); transform-origin: 59% 55%; }
+  .primeDoorButton .arm2 { transform: var(--transform-arm2); transform-origin: 47% 43%; }
+  .primeDoorButton .wrist2 { transform: var(--transform-wrist2); transform-origin: 35% 47%; }
+  .primeDoorButton .leg1 { transform: var(--transform-leg1); transform-origin: 47% 64.5%; }
+  .primeDoorButton .calf1 { transform: var(--transform-calf1); transform-origin: 55.5% 71.5%; }
+  .primeDoorButton .leg2 { transform: var(--transform-leg2); transform-origin: 43% 63%; }
+  .primeDoorButton .calf2 { transform: var(--transform-calf2); transform-origin: 41.5% 73%; }
+  @keyframes lb-spin { from { transform: rotate(0deg) scale(0.94); } to { transform: rotate(359deg) scale(0.94); } }
+  @keyframes lb-shake { 0% { transform: rotate(-1deg); } 50% { transform: rotate(2deg); } 100% { transform: rotate(-1deg); } }
+  @keyframes lb-flash { 0% { opacity: 0.4; } 100% { opacity: 0; } }
+}
