@@ -40,9 +40,10 @@ import type { ApiError } from "../api/client";
 import { TeamsFeature }    from "./components/TeamsFeature";
 import { MatchesFeature }  from "./components/MatchesFeature";
 import { TrainingFeature } from "./components/TrainingFeature";
+import { QuestBoardPage }  from "./components/QuestBoardPage";
 
 // ── Page type ─────────────────────────────────────────────────────────────────
-type Page = "landing" | "doors" | "login" | DoorFeature;
+type Page = "landing" | "doors" | "login" | DoorFeature | "quests";
 
 // ── Static feature copy (visual hero section — do not change these) ───────────
 // The stats and actions here are display copy for the feature page header card.
@@ -169,6 +170,18 @@ export default function App() {
           <Screen key={page}>
             <FeaturePage
               feature={page}
+              onBack={() => setPage("doors")}
+              isLoggedIn={isLoggedIn}
+              user={user}
+              onLogin={goLogin}
+              onLogout={handleLogout}
+            />
+          </Screen>
+        )}
+
+        {page === "quests" && (
+          <Screen key="quests">
+            <QuestBoardPage
               onBack={() => setPage("doors")}
               isLoggedIn={isLoggedIn}
               user={user}
