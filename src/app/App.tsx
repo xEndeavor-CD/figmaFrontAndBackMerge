@@ -25,7 +25,10 @@
  */
 
 import { useEffect, useState, type ReactNode, type CSSProperties } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { AnimatePresence, motion } from "motion/react";
+import { Toaster } from "sonner";
 import { ArrowLeft, CalendarDays, Shield, Trophy, Users, Zap } from "lucide-react";
 
 import { InteractiveBackground } from "./components/InteractiveBackground";
@@ -126,6 +129,7 @@ export default function App() {
 
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
+    <DndProvider backend={HTML5Backend}>
     <div className="relative min-h-screen w-full overflow-hidden bg-[#efe9da] text-[#2b2b2b]">
       <AnimatePresence mode="wait">
         {page === "landing" && (
@@ -191,7 +195,17 @@ export default function App() {
           </Screen>
         )}
       </AnimatePresence>
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          classNames: {
+            toast:
+              "rounded-2xl border-2 border-[#2b2b2b] bg-[#f7f0df] font-['Space_Grotesk'] text-[#2b2b2b] shadow-[4px_4px_0_rgba(43,43,43,0.22)]",
+          },
+        }}
+      />
     </div>
+    </DndProvider>
   );
 }
 
